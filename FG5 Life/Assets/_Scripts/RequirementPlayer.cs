@@ -22,6 +22,6 @@ public class RequirementPlayer : MonoBehaviour
 public enum ReqPlayerState
 {
     eat,
-    drink,
-    takeShower
+    sleep,
+    toilet
 }
