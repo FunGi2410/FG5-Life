@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ece3d7aa979b4d498e31399c9acef0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  percentEatTxt: {fileID: 0}
+  percentToiletTxt: {fileID: 0}
+  percentSleepTxt: {fileID: 0}
