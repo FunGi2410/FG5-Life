@@ -153,28 +153,28 @@ public class CapsuleController : MonoBehaviour
     public void RotateOnPressed()
     {
         Quaternion m_MyQuaternion = transform.rotation;
-        //temp = 0;
-        //horizontalRotate = joystick.Horizontal;
-        //temp += Mathf.Abs(horizontalRotate);
-        //Debug.Log(horizontalRotate);
-        
+        temp = 0;
+        horizontalRotate = joystick.Horizontal;
+        temp += Mathf.Abs(horizontalRotate);
+        Debug.Log(horizontalRotate);
 
-        float rotatePressed = Input.GetAxis("Horizontal");
 
-        if (rotatePressed < 0 || horizontalRotate < 0)
+        //float rotatePressed = Input.GetAxis("Horizontal");
+
+        if (horizontalRotate < 0)
         {
             
             //Debug.Log("temp = " + temp);
 
-            m_MyQuaternion = Quaternion.Euler(new Vector3 (0f, 0f, -90) * rotatePressed);
-            //m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, -90) * horizontalRotate);
+            //m_MyQuaternion = Quaternion.Euler(new Vector3 (0f, 0f, -90) * rotatePressed);
+            m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, -90) * horizontalRotate);
         }
-        else if (rotatePressed > 0 || horizontalRotate > 0)
+        else if (horizontalRotate > 0)
         {
-            m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, -90) * rotatePressed);
-            //m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, -90) * horizontalRotate);
+            //m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, -90) * rotatePressed);
+            m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, -90) * horizontalRotate);
         }
-        else if (rotatePressed == 0 || horizontalRotate == 0)
+        else if (horizontalRotate == 0)
         {
             m_MyQuaternion = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         }

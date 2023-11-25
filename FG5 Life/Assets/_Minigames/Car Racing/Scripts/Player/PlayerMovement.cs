@@ -35,15 +35,37 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (!CarGameManager.intance.IsGameRunning || CarGameManager.intance.IsGameOver) return;
-        this.pressHorizontal = Input.GetAxis("Horizontal");  
-        this.pressVertical = Input.GetAxis("Vertical");
+        /*this.pressHorizontal = Input.GetAxis("Horizontal");  
+        this.pressVertical = Input.GetAxis("Vertical");*/
     }
 
     private void FixedUpdate()
     {
         if (CarGameManager.intance.IsGameOver) return;
+        if (!CarGameManager.intance.IsGameRunning || CarGameManager.intance.IsGameOver) return;
         this.UpdateSpeed();
     }
+
+    public void PoiterRigh()
+    {
+        this.pressHorizontal = 1;
+    }
+
+    public void PoiterLeft()
+    {
+        this.pressHorizontal = -1;
+    }
+    public void PoiterMove()
+    {
+        this.pressVertical = 1;
+    }
+
+    public void PoiterUp()
+    {
+        this.pressHorizontal = 0;
+        this.pressVertical = 0;
+    }
+
 
     protected virtual void UpdateSpeed()
     {

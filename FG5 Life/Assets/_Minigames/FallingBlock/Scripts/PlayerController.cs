@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 7f;
+    float inputX = 0;
     private float screenHalfWidthInWorldUnits;
 
     public event System.Action OnPlayerDeath;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!GameController.Instance.IsGameRunning) return;
-        float inputX = Input.GetAxisRaw("Horizontal");
+        //float inputX = Input.GetAxisRaw("Horizontal");
         this.Animate(inputX);
         float velocity = inputX * speed;
         transform.Translate(Vector2.right * velocity * Time.deltaTime);
@@ -38,6 +39,21 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(screenHalfWidthInWorldUnits, transform.position.y);
         }
+    }
+
+    public void PoiterLeft()
+    {
+        this.inputX = -1;
+    }
+
+    public void PoiterRigh()
+    {
+        this.inputX = 1;
+    }
+
+    public void PoiterUp()
+    {
+        this.inputX = 0;
     }
 
     private void Animate(float inputX)

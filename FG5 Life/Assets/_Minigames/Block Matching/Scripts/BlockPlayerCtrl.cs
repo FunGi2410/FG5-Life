@@ -17,6 +17,8 @@ public class BlockPlayerCtrl : MonoBehaviour
 
     public event System.Action OnPlayerDeath;
 
+    float inputX = 0;
+
     private void Start()
     {
         float halfPlayerWidth = transform.localScale.x / 2f;
@@ -34,7 +36,7 @@ public class BlockPlayerCtrl : MonoBehaviour
         }
 
         //if (!GameController.Instance.IsGameRunning) return;
-        float inputX = Input.GetAxisRaw("Horizontal");
+        //inputX = Input.GetAxisRaw("Horizontal");
         float velocity = inputX * speed;
         transform.Translate(Vector2.right * velocity * Time.deltaTime);
 
@@ -46,6 +48,21 @@ public class BlockPlayerCtrl : MonoBehaviour
         {
             transform.position = new Vector2(screenHalfWidthInWorldUnits, transform.position.y);
         }
+    }
+
+    public void OnPoiterRigh()
+    {
+        this.inputX = 1;
+    }
+
+    public void OnPoiterLeft()
+    {
+        this.inputX = -1;
+    }
+
+    public void OnPoiterUp()
+    {
+        this.inputX = 0;
     }
 
     private void ChangeShape()
