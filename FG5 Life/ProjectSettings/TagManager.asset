@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Inventory
   - Canvas
+  - Enemy
+  - MusicBase
   layers:
   - Default
   - TransparentFX

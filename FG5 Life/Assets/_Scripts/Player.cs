@@ -21,9 +21,9 @@ public class Player : MonoBehaviour
     private float sleepTimer = 0f;
     private float timeDuration = 60f;
 
-    private float goingToiletTimer = 0f;
-    private float goingSleepTimer = 0f;
-    [SerializeField] private float goingToiletTimeDur = 10;
+    /*private float goingToiletTimer = 0f;
+    private float goingSleepTimer = 0f;*/
+    //[SerializeField] private float goingToiletTimeDur = 10;
 
     private bool isSleep = false;
     private bool isToilet = false;

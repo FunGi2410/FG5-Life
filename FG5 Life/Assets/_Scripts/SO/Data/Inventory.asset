@@ -15,12 +15,7 @@ MonoBehaviour:
   waveFoods:
   - numberOfFull: 15
     price: 1
-    amount: 5
+    amount: 13
     foodPrefabs: {fileID: 3596264523032327425, guid: 7c4c95e5f9b5b0342b017461ed1906bf, type: 3}
     foodID: 0
-  - numberOfFull: 15
-    price: 1
-    amount: 3
-    foodPrefabs: {fileID: 3596264523032327425, guid: fade72fef08fe1d4db284249ec036ef3, type: 3}
-    foodID: 0
-  budget: 1000
+  budget: 1379

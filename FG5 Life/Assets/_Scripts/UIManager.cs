@@ -13,8 +13,7 @@ public class UIManager : MonoBehaviour
     public Image EatCirCleImg { get => eatCirCleImg; set => eatCirCleImg = value; }
     public Image ToiletCirCleImg { get => toiletCirCleImg; set => toiletCirCleImg = value; }
     public Image SleepCircleImg { get => sleepCircleImg; set => sleepCircleImg = value; }
-    public Image WcImg_0 { get => wcImg_0; set => wcImg_0 = value; }
-    public Image WcImg_1 { get => wcImg_1; set => wcImg_1 = value; }
+    public GameObject PlayerInWc { get => playerInWc; set => playerInWc = value; }
 
     void Awake()
     {
@@ -34,8 +33,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image sleepCircleImg;
 
     [SerializeField] private GameObject sleepPanel;
-    [SerializeField] private Image wcImg_0;
-    [SerializeField] private Image wcImg_1;
+    [SerializeField] private GameObject playerInWc;
 
     private void Start()
     {
@@ -98,7 +96,7 @@ public class UIManager : MonoBehaviour
 
     public void OnLoadSchoolPage()
     {
-        SceneManager.LoadScene("SchoolScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("BlockMatchingScene", LoadSceneMode.Single);
     }
 
     public void OnLoadHospitalPage()
@@ -113,7 +111,7 @@ public class UIManager : MonoBehaviour
 
     public void OnLoadParkPage()
     {
-        SceneManager.LoadScene("ParkScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("CarGameScene", LoadSceneMode.Single);
     }
 
     public void OnLoadNeighborPage()

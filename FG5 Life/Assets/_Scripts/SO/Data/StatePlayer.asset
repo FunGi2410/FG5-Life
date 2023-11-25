@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6639beaf05a61434494f85bd97febbb8, type: 3}
   m_Name: StatePlayer
   m_EditorClassIdentifier: 
-  percentEatState: 50
-  percentToiletState: 50
+  percentEatState: 40
+  percentToiletState: 20
   percentSleepState: 50
-  timerEat: 0
-  timerToilet: 0
-  timerSleep: 0
+  timerEat: 13.220496
+  timerToilet: 30.577337
+  timerSleep: 13.220496

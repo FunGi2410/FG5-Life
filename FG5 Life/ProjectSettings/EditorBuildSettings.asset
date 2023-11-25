@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/_Scenes/MenuScene.unity
     guid: 909addc4aac55a546b17b7e8b8a6835a
   - enabled: 1
-    path: Assets/Minigames/CasuleRunning/Scenes/HospitalScene.unity
+    path: Assets/_Minigames/CasuleRunning/Scenes/HospitalScene.unity
     guid: fc256713ad444d448a32e3987dacf1f3
   - enabled: 1
-    path: Assets/Scenes/ParkScene.unity
-    guid: 36ca764044c02e14ab3e85d03fc788b5
-  - enabled: 1
-    path: Assets/Scenes/SchoolScene.unity
-    guid: 89f02614ee938da45a605cce2942a9bf
-  - enabled: 1
-    path: Assets/Scenes/ToiletScene.unity
+    path: Assets/_Scenes/ToiletScene.unity
     guid: e3fb5f3b05d9be240a64edef6662b725
   - enabled: 1
-    path: Assets/Minigames/FallingBlock/Scenes/GroceryScene.unity
+    path: Assets/_Minigames/FallingBlock/Scenes/GroceryScene.unity
     guid: 14c969ef79d670448beb4f072ad60031
   - enabled: 1
-    path: Assets/Scenes/SleepScene.unity
+    path: Assets/_Scenes/SleepScene.unity
     guid: 1ab212396795e874c96267431b30d200
   - enabled: 1
-    path: Assets/Scenes/EatScene.unity
+    path: Assets/_Scenes/EatScene.unity
     guid: 41759ada0e767e348b5fc07ea2769045
+  - enabled: 1
+    path: Assets/_Minigames/Car Racing/Scenes/CarGameScene.unity
+    guid: aeb93016b2e70c5458f48443e653ed1f
+  - enabled: 1
+    path: Assets/_Minigames/Block Matching/Scene/BlockMatchingScene.unity
+    guid: 7366b84d7c4e13344b6b64c10fa96b2e
   m_configObjects: {}
