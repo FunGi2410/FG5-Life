@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private float pressHorizontal = 0f;
     public float pressVertical = 0f;
 
+    public Joystick joystick;
+
+
     [SerializeField] private Transform roadTrans;
     private Vector2 sizeOfRoad;
 
@@ -35,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (!CarGameManager.intance.IsGameRunning || CarGameManager.intance.IsGameOver) return;
+        this.HorizontalPressed();
         /*this.pressHorizontal = Input.GetAxis("Horizontal");  
         this.pressVertical = Input.GetAxis("Vertical");*/
     }
@@ -44,6 +48,16 @@ public class PlayerMovement : MonoBehaviour
         if (CarGameManager.intance.IsGameOver) return;
         if (!CarGameManager.intance.IsGameRunning || CarGameManager.intance.IsGameOver) return;
         this.UpdateSpeed();
+    }
+
+    public void HorizontalPressed()
+    {
+        if (joystick.Horizontal < 0)
+        {
+            this.pressHorizontal = -1;
+        }
+        else if (joystick.Horizontal > 0) this.pressHorizontal = 1;
+        else this.pressHorizontal = 0;
     }
 
     public void PoiterRigh()
