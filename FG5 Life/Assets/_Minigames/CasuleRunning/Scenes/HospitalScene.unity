@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &252907434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: SetIsPush
           m_Mode: 1
@@ -1094,7 +1094,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: SetIsPush
           m_Mode: 1
@@ -1498,8 +1498,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
-          m_TargetAssemblyTypeName: CapsuleController, Assembly-CSharp
+        - m_Target: {fileID: 1891866587}
+          m_TargetAssemblyTypeName: Capsule, Assembly-CSharp
           m_MethodName: SetIsJump
           m_Mode: 1
           m_Arguments:
@@ -1514,8 +1514,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
-          m_TargetAssemblyTypeName: CapsuleController, Assembly-CSharp
+        - m_Target: {fileID: 1891866587}
+          m_TargetAssemblyTypeName: Capsule, Assembly-CSharp
           m_MethodName: SetIsJump
           m_Mode: 1
           m_Arguments:
@@ -2555,8 +2555,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
-          m_TargetAssemblyTypeName: CapsuleController, Assembly-CSharp
+        - m_Target: {fileID: 1891866587}
+          m_TargetAssemblyTypeName: Capsule, Assembly-CSharp
           m_MethodName: SetIsPush
           m_Mode: 1
           m_Arguments:
@@ -2571,8 +2571,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
-          m_TargetAssemblyTypeName: CapsuleController, Assembly-CSharp
+        - m_Target: {fileID: 1891866587}
+          m_TargetAssemblyTypeName: Capsule, Assembly-CSharp
           m_MethodName: SetIsPush
           m_Mode: 1
           m_Arguments:
@@ -2977,7 +2977,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: SetIsJump
           m_Mode: 1
@@ -2993,7 +2993,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1422984031885878653}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: SetIsJump
           m_Mode: 1
@@ -3104,7 +3104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1803151778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3167,6 +3167,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803151777}
   m_CullTransparentMesh: 1
+--- !u!114 &1891866587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8661321531286689518, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
+  m_PrefabInstance: {fileID: 1422984031885878652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8671ceb1698ae1a4d97c95cfb5e66664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1923655893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,11 +3271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422984031920992104, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.53
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 1422984031920992104, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3596
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 1422984031920992104, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3302,51 +3313,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1422984031920992111, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1422984031920992111, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1422984031920992111, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1422984031920992111, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: m_Color.g
-      value: 0.90230036
-      objectReference: {fileID: 0}
-    - target: {fileID: 1422984031920992111, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1422984031920992111, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 3693376365947892959, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
+    - target: {fileID: 8661321531286689518, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 890420228}
-    - target: {fileID: 3693376365947892959, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-      propertyPath: playShotSound
-      value: 
-      objectReference: {fileID: 593600759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
---- !u!114 &1422984031885878653 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3693376365947892959, guid: 8888f02745240d848b3af11a0a4ad9eb, type: 3}
-  m_PrefabInstance: {fileID: 1422984031885878652}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8c478ab36c636a4bb90f150da48987a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3065423560638801744
 PrefabInstance:
   m_ObjectHideFlags: 0

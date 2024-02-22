@@ -9,6 +9,9 @@ public class BlockEnemyCtrl : MonoBehaviour
     public Vector2 spawnSizeMinMax;
 
     public IDBlock id;
+    [SerializeField] private GameObject deadEffect;
+
+    public GameObject DeadEffect { get => deadEffect; set => deadEffect = value; }
 
     private void Start()
     {

@@ -31,6 +31,7 @@ public class GameOver : MonoBehaviour
 
     public void OnGameOver()
     {
+        if (isGameOver) return;
         isGameOver = true;
         GameController.Instance.Score = Mathf.RoundToInt(Time.timeSinceLevelLoad);
         scoreNumberUI.text = GameController.Instance.Score.ToString();

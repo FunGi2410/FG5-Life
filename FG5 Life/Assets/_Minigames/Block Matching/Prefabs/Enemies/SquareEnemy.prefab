@@ -102,6 +102,7 @@ MonoBehaviour:
   speedMinMax: {x: 5, y: 10}
   spawnSizeMinMax: {x: 0, y: 3}
   id: 0
+  deadEffect: {fileID: 8020589325249765826, guid: 89c4226807fc0f74c9b6379f4729a82b, type: 3}
 --- !u!114 &-4983065331669895118
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -69,11 +69,12 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "Obstacle")
         {
-            if(OnPlayerDeath != null)
+            this.animator.SetBool("isDead", true);
+            if (OnPlayerDeath != null)
             {
                 this.OnPlayerDeath();
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

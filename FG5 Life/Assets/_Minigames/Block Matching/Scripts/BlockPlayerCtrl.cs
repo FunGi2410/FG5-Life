@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlockPlayerCtrl : MonoBehaviour
 {
-    [SerializeField] private float speed = 7f;
     private float screenHalfWidthInWorldUnits;
 
     [SerializeField] private List<GameObject> shapeObjs;
@@ -16,30 +15,26 @@ public class BlockPlayerCtrl : MonoBehaviour
     [SerializeField] private float secondsBetweenChangeShape = 6f;
 
     public event System.Action OnPlayerDeath;
-
-    float inputX = 0;
+    Vector2 difference = Vector2.zero;
+    Animator animator;
+    [SerializeField] private GameObject deadEffect;
 
     private void Start()
     {
         float halfPlayerWidth = transform.localScale.x / 2f;
         screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPlayerWidth;
+        this.animator = GetComponent<Animator>();
     }
-    private void Update()
+
+    private void OnMouseDown()
     {
-        if (!BlockMatchGameManager.Instance.IsGameRunning) return;
-        // Change shape for player
-        timer += Time.deltaTime;
-        if (timer >= secondsBetweenChangeShape)
-        {
-            timer = 0f;
-            this.ChangeShape();
-        }
+        this.difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
+    }
 
-        //if (!GameController.Instance.IsGameRunning) return;
-        //inputX = Input.GetAxisRaw("Horizontal");
-        float velocity = inputX * speed;
-        transform.Translate(Vector2.right * velocity * Time.deltaTime);
-
+    private void OnMouseDrag()
+    {
+        Vector2 transformPosMouse = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
+        transform.position = new Vector2(transformPosMouse.x, transform.position.y);
         if (transform.position.x < -screenHalfWidthInWorldUnits)
         {
             transform.position = new Vector2(-screenHalfWidthInWorldUnits, transform.position.y);
@@ -49,20 +44,21 @@ public class BlockPlayerCtrl : MonoBehaviour
             transform.position = new Vector2(screenHalfWidthInWorldUnits, transform.position.y);
         }
     }
-
-    public void OnPoiterRigh()
+    private void Update()
     {
-        this.inputX = 1;
-    }
-
-    public void OnPoiterLeft()
-    {
-        this.inputX = -1;
-    }
-
-    public void OnPoiterUp()
-    {
-        this.inputX = 0;
+        if (!BlockMatchGameManager.Instance.IsGameRunning) return;
+        // Change shape for player
+        timer += Time.deltaTime;
+        if(timer >= secondsBetweenChangeShape - 3)
+        {
+            this.animator.SetBool("IsChange", true);
+        }
+        if (timer >= secondsBetweenChangeShape)
+        {
+            timer = 0f;
+            this.animator.SetBool("IsChange", false);
+            this.ChangeShape();
+        }
     }
 
     private void ChangeShape()
@@ -85,6 +81,8 @@ public class BlockPlayerCtrl : MonoBehaviour
             }
             else
             {
+                Instantiate(deadEffect, transform.position, Quaternion.identity);
+                Instantiate(collision.GetComponent<BlockEnemyCtrl>().DeadEffect, collision.gameObject.transform.position, Quaternion.identity);
                 print("Player Died");
                 if (OnPlayerDeath != null)
                 {
@@ -94,6 +92,7 @@ public class BlockPlayerCtrl : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        
         Destroy(collision.gameObject);
     }
 }
