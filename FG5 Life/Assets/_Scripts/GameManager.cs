@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void OnEattingBnt()
+   /* public void OnEattingBnt()
     {
         if (Player.Instance == null) return;
         Player.Instance.Eatting();
-    }
+    }*/
 
     public void OnGoingToilet()
     {
@@ -85,7 +85,6 @@ public class GameManager : MonoBehaviour
     // Menu
     public void OnLoadMenuPage()
     {
-        //Player.Instance.IsAtToiletRoom = false;
         SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
     }
 

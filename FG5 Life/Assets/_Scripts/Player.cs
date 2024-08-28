@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(RequirementPlayer))]
 public class Player : MonoBehaviour
 {
     // singleton
@@ -20,10 +19,6 @@ public class Player : MonoBehaviour
     private float toiletTimer = 0f;
     private float sleepTimer = 0f;
     private float timeDuration = 60f;
-
-    /*private float goingToiletTimer = 0f;
-    private float goingSleepTimer = 0f;*/
-    //[SerializeField] private float goingToiletTimeDur = 10;
 
     private bool isSleep = false;
     private bool isToilet = false;
@@ -42,8 +37,6 @@ public class Player : MonoBehaviour
     public bool IsAtToiletRoom { get => isAtToiletRoom; set => isAtToiletRoom = value; }
     public bool IsToilet { get => isToilet; set => isToilet = value; }
 
-    //private RequirementPlayer reqPlayer;
-
     private LivingState eatState;
     private LivingState toiletState;
     private LivingState sleepState;
@@ -54,23 +47,9 @@ public class Player : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "ToiletScene") this.isAtToiletRoom = true;
 
-        /*this.reqPlayer = GetComponent<RequirementPlayer>();
-
-        // test
-        this.reqPlayer.CreateState();
-        this.curState = this.reqPlayer.GetState();
-        print(this.curState);*/
-
         // max percent state follow to level player
         // set after that
         this.SetCurState();
-
-        //print(eatState.Percent);
-
-        // set percent ui
-        UIManager.Instance.SetPercentEatTxt(SO_StatePlayer.PercentEatState.ToString());
-        UIManager.Instance.SetPercentToiletTxt(SO_StatePlayer.PercentToiletState.ToString());
-        UIManager.Instance.SetPercentSleepTxt(SO_StatePlayer.PercentSleepState.ToString());
     }
 
     private void Update()
@@ -89,7 +68,6 @@ public class Player : MonoBehaviour
             // set so data
             SO_StatePlayer.PercentEatState = eatState.Percent;
 
-            UIManager.Instance.SetPercentEatTxt(this.eatState.Percent.ToString());
             float progress = (float)this.eatState.Percent / 100;
             UIManager.Instance.EatCirCleImg.fillAmount = progress;
         }
@@ -104,7 +82,6 @@ public class Player : MonoBehaviour
             // set so data
             SO_StatePlayer.PercentToiletState = toiletState.Percent;
 
-            UIManager.Instance.SetPercentToiletTxt(this.toiletState.Percent.ToString());
             float progress = (float)this.toiletState.Percent / 100;
             UIManager.Instance.ToiletCirCleImg.fillAmount = progress;
         }
@@ -119,7 +96,6 @@ public class Player : MonoBehaviour
             // set so data
             SO_StatePlayer.PercentSleepState = sleepState.Percent;
 
-            UIManager.Instance.SetPercentSleepTxt(this.sleepState.Percent.ToString());
             float progress = (float)this.sleepState.Percent / 100;
             UIManager.Instance.SleepCircleImg.fillAmount = progress;
         }
@@ -155,7 +131,6 @@ public class Player : MonoBehaviour
         this.eatState.Percent += 15;
 
         // set percent eat state ui
-        UIManager.Instance.SetPercentEatTxt(this.eatState.Percent.ToString());
         float progress = (float)this.eatState.Percent / 100;
         UIManager.Instance.EatCirCleImg.fillAmount = progress;
 
@@ -165,15 +140,7 @@ public class Player : MonoBehaviour
 
     public void GoingToilet()
     {
-        /*// counter time
-        if (Timer.IsCounter(ref this.goingToiletTimer, this.goingToiletTimeDur))
-        {
-            this.toiletState.Percent = 100;
-        }*/
         StartCoroutine(GoingToiletCoroutine());
-       
-        // test with solid valid with 3
-        //this.toiletState.Percent += 3;
     }
 
     IEnumerator GoingToiletCoroutine()
@@ -190,7 +157,6 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("ToiletScene", LoadSceneMode.Single);
 
                 // set percent eat state ui
-                UIManager.Instance.SetPercentToiletTxt(this.toiletState.Percent.ToString());
                 float progress = (float)this.toiletState.Percent / 100;
                 UIManager.Instance.ToiletCirCleImg.fillAmount = progress;
 
@@ -224,7 +190,6 @@ public class Player : MonoBehaviour
             this.sleepState.Percent += 20;
 
             // set percent eat state ui
-            UIManager.Instance.SetPercentSleepTxt(this.sleepState.Percent.ToString());
             float progress = (float)this.sleepState.Percent / 100;
             UIManager.Instance.SleepCircleImg.fillAmount = progress;
 
@@ -235,6 +200,13 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(3f);
         }
     }
+}
+
+public enum ReqPlayerState
+{
+    eat,
+    sleep,
+    toilet
 }
 
 public struct LivingState

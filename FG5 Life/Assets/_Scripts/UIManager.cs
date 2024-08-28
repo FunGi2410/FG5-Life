@@ -20,10 +20,6 @@ public class UIManager : MonoBehaviour
         Instance = this;
     }
 
-    [SerializeField] private TextMeshProUGUI percentEatTxt;
-    [SerializeField] private TextMeshProUGUI percentToiletTxt;
-    [SerializeField] private TextMeshProUGUI percentSleepTxt;
-
     [SerializeField] private TextMeshProUGUI budGetTxt;
     [SerializeField] private TextMeshProUGUI budGetInShopTxt;
 
@@ -67,21 +63,6 @@ public class UIManager : MonoBehaviour
             budGetInShopTxt.text = Inventory.Instance.SO_Inventory.Budget.ToString();
         if(budGetTxt != null)
             budGetTxt.text = Inventory.Instance.SO_Inventory.Budget.ToString();
-    }
-
-    public void SetPercentEatTxt(string percent)
-    {
-        percentEatTxt.text = percent;
-    }
-
-    public void SetPercentToiletTxt(string percent)
-    {
-        percentToiletTxt.text = percent;
-    }
-
-    public void SetPercentSleepTxt(string percent)
-    {
-        percentSleepTxt.text = percent;
     }
 
     public void OnLoadHomePage()

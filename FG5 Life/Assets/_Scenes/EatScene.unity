@@ -932,6 +932,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4002356028125898055, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165654105667313629, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8625136236405870204, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -947,28 +955,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2948658200673052856, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
   m_PrefabInstance: {fileID: 351268662}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &351268664 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 328880014664052008, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
-  m_PrefabInstance: {fileID: 351268662}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &351268665 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5916811465160979926, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
-  m_PrefabInstance: {fileID: 351268662}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &534304616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,17 +2156,6 @@ RectTransform:
   m_AnchoredPosition: {x: 164, y: -133}
   m_SizeDelta: {x: 429.5105, y: 252.0917}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1305129060 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5036402144558850299, guid: 8c13df1e57ade1543995705aa33ca5a6, type: 3}
-  m_PrefabInstance: {fileID: 351268662}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1327849454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,7 +2631,7 @@ PrefabInstance:
     - target: {fileID: 5265274894892256163, guid: fcf826513fa4d9048b01ad2273b37fd8, type: 3}
       propertyPath: percentEatTxt
       value: 
-      objectReference: {fileID: 1305129060}
+      objectReference: {fileID: 0}
     - target: {fileID: 5265274894892256163, guid: fcf826513fa4d9048b01ad2273b37fd8, type: 3}
       propertyPath: sleepCircleImg
       value: 
@@ -2668,15 +2643,11 @@ PrefabInstance:
     - target: {fileID: 5265274894892256163, guid: fcf826513fa4d9048b01ad2273b37fd8, type: 3}
       propertyPath: percentSleepTxt
       value: 
-      objectReference: {fileID: 351268664}
+      objectReference: {fileID: 0}
     - target: {fileID: 5265274894892256163, guid: fcf826513fa4d9048b01ad2273b37fd8, type: 3}
       propertyPath: toiletCirCleImg
       value: 
       objectReference: {fileID: 960685242}
-    - target: {fileID: 5265274894892256163, guid: fcf826513fa4d9048b01ad2273b37fd8, type: 3}
-      propertyPath: percentToiletTxt
-      value: 
-      objectReference: {fileID: 351268665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcf826513fa4d9048b01ad2273b37fd8, type: 3}
 --- !u!114 &1517101435 stripped

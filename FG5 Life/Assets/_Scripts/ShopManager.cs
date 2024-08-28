@@ -15,7 +15,6 @@ public class ShopManager : MonoBehaviour
     public void BuyFood()
     {
         GameObject myButtonGameObject = EventSystem.current.currentSelectedGameObject;
-        //print("Button: " + myButtonGameObject.transform.parent.name);
         string name = myButtonGameObject.transform.parent.name;
 
 
@@ -51,6 +50,5 @@ public class ShopManager : MonoBehaviour
     public void ExitShop()
     {
         UIManager.Instance.OnLoadEatScene();
-        //this.shopPanel.SetActive(false);
     }
 }
